@@ -1,0 +1,79 @@
+#+startup: beamer
+#+TITLE: Intro to Programming
+#+AUTHOR: Clarissa Littler
+#+OPTIONS: H:2 toc:nil
+#+latex_header: \mode<beamer>{\usetheme{Madrid}}
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger]
+* Introduction
+** What we'll cover
+** How this class works
+* What is programming
+** Programming is computation
+** Programming is talking to the computer
+** Programming is speaking a language
+** JavaScript is a language
+** Why JavaScript?
+** Why programming is hard
+** Why programming is learnable
+* Our games
+** How it looks
+** What it is
+*** meta							   :noexport:
+    So the basic structure here is that there's going to be a bunch of levels where we need to move from the starting position to the goal and we're going to do it by writing code.
+
+** How do we play
+** Playing the game
+** Web pages
+** What is a source file
+** Loading a file
+* Basics of JavaScript
+** Syntax
+** Calling functions
+** Sequences
+** Variables and Names
+* Moving our hero
+** Moving left and right
+** Entering the exit
+** Jump around
+** Taking multiple steps
+* Solving level 1
+** Our first level
+** Try it out yourself
+** My solution
+* Repeating actions
+** Taking as many steps as needed
+** Iteration
+** For loops
+** Making decisions
+** What is truth?
+** atExit
+** While loops
+* Taking multiple steps at once
+** Using loops to move around
+** Revisiting the first level
+** Try our new solution
+* Solving level 2
+** Our second level
+** Try it yourself
+** My solution
+* Solving level 3
+** Our third level
+** Try it yourself
+** My solution
+* General choices
+** If-statements
+** isWall predicate
+** atLedge predicate
+** Jumping over short walls
+** Leaping from platform to platform
+* Solving level 4
+** Our fourth level
+** Try it yourself
+** My solution
+* Defining functions and Reusing code
+** Code reuse and redundancy
+* Solving level 5
+** Our fifth level
+** Try it yourself
+** My solution
