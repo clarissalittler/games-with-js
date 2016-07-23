@@ -2,78 +2,407 @@
 #+TITLE: Intro to Programming
 #+AUTHOR: Clarissa Littler
 #+OPTIONS: H:2 toc:nil
-#+latex_header: \mode<beamer>{\usetheme{Madrid}}
+#+latex_header: \usetheme{Madrid}
+#+LaTeX_HEADER: \usepackage{array,mathtools,amsmath}
+#+LaTeX_HEADER: \usepackage{xcolor}
+#+LaTeX_HEADER: \usepackage{color}
+#+LaTeX_HEADER: \usepackage{framed}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \newcommand{\key}[1]{\textcolor{blue}{#1}}
+#+LaTeX_HEADER: \definecolor{shadecolor}{gray}{0.8}
+#+LaTeX_HEADER: \setlength{\parskip}{0.5em}
 #+LaTeX_CLASS: beamer
-#+LaTeX_CLASS_OPTIONS: [bigger]
+
 * Introduction
 ** What we'll cover
+   + What is programming? \pause
+   + What are programming languages \pause
+     + ...and why do we need them? \pause
+   + Basic programming in JavaScript
 ** How this class works
+   + Lecture \pause
+   + Demonstration \pause
+   + In-class exercises \pause
+   + Take home supplements
+** What you'll get out of it
+   + An introduction to programming \pause
+   + Enough knowledge to keep going on your own \pause
+   + Code you can build off of
 * What is programming
-** Programming is computation
-** Programming is talking to the computer
 ** Programming is speaking a language
-** JavaScript is a language
-** Why JavaScript?
+   + All language is communication \pause
+   + Programming languages are special languages \pause
+   + Computers need precision \pause they're not as smart as us
 ** Why programming is hard
+*** 
+    The precision of instructions computers need is unnatural for the human mind
+** Why programming is hard
+*** 
+#+ATTR_LATEX: :width 5cm
+[[file:ikea-instructions.jpg][file:~/projects/games-with-js/ikea-instructions.jpg]]
+** Why programming is hard
+*** 
+#+ATTR_LATEX: :width 5cm
+[[file:EmpireStateSection.gif][file:~/projects/games-with-js/EmpireStateSection.png]]
 ** Why programming is learnable
+   + Precise thinking may be unnatural \pause
+   + But it's not impossible \pause
+   + It takes time \pause and practice \pause
+   + Like learning any language
+** JavaScript is a programming language
+   + Many different languages \pause
+   + One of the most common: \pause JavaScript
+** Why JavaScript?
+   + JavaScript runs in your browser \pause
+   + JavaScript is a \textcolor{blue}{relatively} simple language \pause
+   + JavaScript lets interact with web pages
 * Our games
 ** How it looks
+*** 
+#+ATTR_LATEX: :width 5cm
+file:sampleLevel.png
 ** What it is
-*** meta							   :noexport:
-    So the basic structure here is that there's going to be a bunch of levels where we need to move from the starting position to the goal and we're going to do it by writing code.
-
+*** 
+Simple puzzles where you need to write code to move your character (the black block) to the goal (the red pillar).
 ** How do we play
+*** 
+   Move our hero from the start \pause to the finish \pause navigating obstacles
 ** Playing the game
+*** 
+   We'll write the JavaScript code to move our hero around, using functions for \pause 
+   + walking \pause
+   + turning \pause
+   + jumping
+** The JavaScript console
+   + Every browser can run JavaScript \pause
+   + The =console= allows you to test code
+** The JavaScript console
+*** 
+#+LaTeX: {\HUGE
+Let's try it!
+#+LaTeX: }
 ** Web pages
+   + Our code runs in the browser \pause
+   + Crafty [[http://craftyjs.com][craftyjs.com]] \pause
+   + Take advantage of JavaScript's integration
 ** What is a source file
+   + Code is read in from *files* \pause
+   + JavaScript code by convention ends in =.js= \pause
+   + Code you'll be changing in =pathn.js=
 ** Loading a file
+*** 
+   Easiest way to run JavaScript files is to load a page that calls them
+** Loading a file
+*** 
+#+BEGIN_SRC html :exports code :tangle testscript.html
+  <!doctype html>
+  <html>
+    <head>
+      <script src="testscript.js"></script>
+    </head>
+    <body>
+      Check the console and see what happened!
+    </body>
+  </html>
+#+END_SRC
+
+#+BEGIN_SRC js :exports none :tangle testscript.js
+  console.log("Hey there!");
+  console.log("We're going to print to the console");
+#+END_SRC
 * Basics of JavaScript
 ** Syntax
-** Calling functions
-** Sequences
-** Variables and Names
-* Moving our hero
+   + Syntax is the grammar of a language \pause
+   + Even stricter rules than human languages \pause
+   + "Dog not can to ridebike nor can to cook" \pause
+   + Computers can't guess
+** Evaluation of code
+   + Syntax doesn't *do* anything \pause
+   + Saying "I have a trillion dollars" doesn't make it so \pause
+   + An /interpreter/ runs (or /evaluates/) code
+** Arithmetic
+*** 								      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+**** Numbers
+     + 1
+     + 0.5
+     + -20
+     + $\ldots$
+*** 								      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+**** Operations
+     + =+=
+     + =-=
+     + =*=
+     + $\ldots$
+** Variables
+*** I have a friend, let's call her "Cassandra"...
+Variables function both as storage containers and pronouns
+** Creating Variables
+*** 
+#+BEGIN_SRC js :exports code
+  var nameOfVariable = initialValueInIt;
+  var numberOfToes = 10;
+#+END_SRC
+** Assigning variables
+*** 
+#+BEGIN_SRC js :exports code
+  var musicalsThatShouldExist = "The Walking Dead on Ice";
+  musicalsThatShouldExist = "Werner Herzog Sings The Blues";
+#+END_SRC
+** Functions 
+*** Functions in math
+#+BEGIN_LaTeX
+\begin{align*}
+  f(x) &= x + 10
+\end{align*}
+#+END_LaTeX
+** Functions
+*** Functions in JavaScript
+#+BEGIN_SRC js :exports code
+  function f(x) {
+      return x + 10;
+  }
+#+END_SRC
+** Using functions
+*** 
+First example of a function, a function that writes data to the console
+*** 
+#+BEGIN_CENTER
+  =console.log=
+#+END_CENTER
+** Multi-argument functions
+*** 
+#+BEGIN_SRC js :exports code
+  function moreFun (anArgument,anotherArgument) {
+      console.log(anArgument + anotherArgument);
+  }
+
+  moreFun(10, 20);
+#+END_SRC
+** Functions with no arguments
+*** 
+#+BEGIN_SRC js :exports code
+  function noArgs () {
+      return 10;
+  }
+#+END_SRC
 ** Moving left and right
-** Entering the exit
-** Jump around
-** Taking multiple steps
-* Solving level 1
+   + =step= moves forward a step \pause
+   + =jump= jumps forward \pause
+   + =turnAround= turns you around \pause
+   + steps need to be taken individually
 ** Our first level
+*** 
+#+ATTR_LATEX: :width 5cm
+file:level1.png
 ** Try it out yourself
+*** 
+    Add code to the function =solution= so that our hero moves to the exit
 ** My solution
-* Repeating actions
-** Taking as many steps as needed
-** Iteration
-** For loops
-** Making decisions
-** What is truth?
-** atExit
-** While loops
-* Taking multiple steps at once
-** Using loops to move around
-** Revisiting the first level
-** Try our new solution
-* Solving level 2
+*** 
+#+BEGIN_SRC js :exports code
+  function solution(){
+      step();
+      finish();
+  }
+#+END_SRC
+
 ** Our second level
-** Try it yourself
-** My solution
-* Solving level 3
+#+ATTR_LATEX: :width 5cm
+file:level2.png
+** Sequences
+   + Need to do more than a single step of code at a time \pause
+   + List the steps line by line \pause separate by semicolons
+** Sequences
+*** 
+#+BEGIN_SRC js :exports code
+  console.log(1);
+  console.log(10);
+#+END_SRC
+** Taking multiple steps
+*** 
+    How do we sequence actions in JavaScript?
+** Taking multiple steps
+*** 								      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+**** 
+    Taking three steps $\Longrightarrow$ \pause
+*** 								      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.4
+    :END:
+**** 
+     #+BEGIN_SRC javascript :exports code
+       step();
+       step();
+       step();
+     #+END_SRC
+** Our second level
+*** Try solving it!
+#+ATTR_LATEX: :width 5cm
+file:level2.png
 ** Our third level
-** Try it yourself
-** My solution
-* General choices
-** If-statements
-** isWall predicate
-** atLedge predicate
-** Jumping over short walls
-** Leaping from platform to platform
-* Solving level 4
-** Our fourth level
-** Try it yourself
-** My solution
+*** 
+#+ATTR_LATEX: :width 5cm
+file:level3.png
+** Taking as many steps as needed
+   + Previous solution isn't helpful \pause
+   + Who wants to type =step()= again and again? \pause
+   + Need a way to repeat, /iterate/, steps
+** Iteration
+   + *Iteration* \pause general term \pause
+   + Two kinds \pause
+     + *for* \pause
+     + *while*
+** For loops
+*** Definite iteration
+    Do something a set /number of times/
+** Chop three onions
+file:onions.jpg
+** Walk five blocks
+file:sidewalk.jpg
+** What is truth?
+   + =true=
+   + =false=
+** Arithmetic comparison
+*** 
+  + =<= 
+  + =>= 
+  + ~==~
+** For-loop syntax
+*** 
+#+BEGIN_SRC js :exports code
+  for(var i = 0; i < 10; i = i + 1){
+      console.log(i);
+  }
+#+END_SRC
+** Level 3: for-loops
+#+ATTR_LATEX: :width 5cm
+file:level3.png
+** While loops
+*** 
+Do /something/ while /something/ is true. 
+** While loop syntax
+#+BEGIN_SRC js :exports code
+  var i = 0;
+  while (i < 20) {
+      console.log(20);
+  }
+#+END_SRC
+** isAtExit predicate
+*** 
+=isAtExit= returns =true= if you're at the exit and =false= if you're not
+** Negation
+*** 
++ ~! false == true~
++ ~! true == false~
+** Level 3: while-loops
+#+ATTR_LATEX: :width 5cm
+file:level3.png
 * Defining functions and Reusing code
+** Level 4: jumping
+#+ATTR_LATEX: :width 5cm
+file:level4.png
+** Level 5: a lot of jumping
+#+ATTR_LATEX: :width 5cm
+file:level5.png
 ** Code reuse and redundancy
-* Solving level 5
-** Our fifth level
-** Try it yourself
-** My solution
+   + Don't want to write jumping code every time \pause
+   + We often have things we want to repeat \pause
+   + Recall: \pause functions are chunks of code \pause
+   + We've seen how to /call/ functions \pause now *write* them
+** Writing a function
+*** 
+   #+BEGIN_SRC js :exports code
+     function myFunc () {
+             ...
+     }
+   #+END_SRC
+** Writing a function
+*** Function to walk two steps
+   #+BEGIN_SRC js :exports code
+     function twostep () {
+         step();
+         step();
+	 finish();
+     }
+   #+END_SRC
+** Making a function for jumping
+*** 
+    Put it into a function called =platformJump=
+** platformJump
+#+BEGIN_SRC js :exports code
+  function platformJump(){
+      step();
+      jump();
+  }
+#+END_SRC
+** Re-solve level 5
+#+ATTR_LATEX: :width 5cm
+file:level5.png
+** Simplifying code
+*** 
+What if we wanted a single function that would step if you're not on a ledge and jump if you're on a ledge?
+** If-statements
+*** 
+If-statements are how you /choose/ what to do based on whether something is /true/
+** If-statement syntax
+*** 
+#+BEGIN_SRC js :exports code
+  if (10 < 20){
+      console.log("ten");
+  }
+  else {
+      console.log("twenty");
+  }
+#+END_SRC
+** atEdge predicate
+*** 
+=atEdge= returns =true= if the player is near an edge and =false= if they are not
+** safeStep
+*** Create a safeStep function
+#+BEGIN_SRC js :exports code
+  function safeStep () {
+          ...
+  }
+#+END_SRC
+** Rewriting level 5
+#+ATTR_LATEX: :width 5cm
+file:level5.png
+** Bonus: sixth level
+#+ATTR_LATEX: :width 5cm
+file:sampleLevel.png
+* What Next?
+** Where do you go from here?
+   \pause
+   + Continue learning programming! \pause
+   + Study guides available \pause
+     + General progrmaming study guide \pause
+     + Guide to making a game with Crafty \pause
+     + Both are continually updated \pause so keep checking back!
+** What topics are left?
+   + Objects in JavaScript \pause
+   + Arrays in JavaScript \pause
+   + Higher-order functions/closures \pause
+   + Interacting with the browser \pause
+     + DOM \pause
+     + Events \pause
+** Thanks  
+***  
+   #+LaTeX: {\HUGE
+   Thanks for attending this course!
+   #+LaTeX: }
+** References
+*** 
+   Study guide is available at:
+
+   https://github.com/clarissalittler/multcolib-lectures/blob/master/BeginnerProgrammingReference.pdf
+*** 
+There will also be a study guide for learning about making small games with Crafty and a longer tutorial explaining all the code in this repository. So stay tuned!
