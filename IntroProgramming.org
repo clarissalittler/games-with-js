@@ -6,11 +6,9 @@
 #+LaTeX_HEADER: \usepackage{array,mathtools,amsmath}
 #+LaTeX_HEADER: \usepackage{xcolor}
 #+LaTeX_HEADER: \usepackage{color}
-#+LaTeX_HEADER: \usepackage{framed}
 #+LaTeX_HEADER: \usepackage{minted}
 #+LaTeX_HEADER: \newcommand{\key}[1]{\textcolor{blue}{#1}}
 #+LaTeX_HEADER: \definecolor{shadecolor}{gray}{0.8}
-#+LaTeX_HEADER: \setlength{\parskip}{0.5em}
 #+LaTeX_CLASS: beamer
 
 * Introduction
@@ -149,11 +147,16 @@ Variables function both as storage containers and pronouns
   var numberOfToes = 10;
 #+END_SRC
 ** Assigning variables
-*** 
+*** Follow along!
 #+BEGIN_SRC js :exports code
   var musicalsThatShouldExist = "The Walking Dead on Ice";
+  musicalsThatShouldExist;
   musicalsThatShouldExist = "Werner Herzog Sings The Blues";
+  musicalsThatShouldExist;
 #+END_SRC
+** Example
+*** You try it
+Open the console, make a variable, and then try setting it to different values
 ** Functions 
 *** Functions in math
 #+BEGIN_LaTeX
@@ -191,6 +194,26 @@ First example of a function, a function that writes data to the console
       return 10;
   }
 #+END_SRC
+** Example
+*** 
+Navigate to the file =consoleExample.html= and then check the console to see what happened
+** Example
+*** 
+#+BEGIN_SRC html :exports code :tangle consoleExample.html
+  <!doctype html>
+  <html>
+    <head>
+      <script>
+        console.log("we're printing one message");
+        console.log("and another message!");
+      </script>
+    </head>
+    <body>
+      Check your console!
+    </body>
+  </html>
+#+END_SRC
+
 ** Moving left and right
    + =step= moves forward a step \pause
    + =jump= jumps forward \pause
