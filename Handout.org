@@ -1,0 +1,26 @@
+#+TITLE: Handout for Intro. to JavaScript via Games
+#+OPTIONS: toc:nil
+#+LaTeX_HEADER: \usepackage[margin=1in]{geometry}
+#+LaTeX_HEADER: \usepackage{framed}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \setlength{\parskip}{2mm}
+
+* Getting started
+  Welcome to the class!
+
+  Now the first step is to download the slides so you can follow along with the lectures: http://bit.ly/2ahJKo8
+
+  Then, navigate to https://github.com/clarissalittler/games-with-js and click on the "download" button and then the "download zip" option. Alternately, just use following link to download the zip directly https://github.com/clarissalittler/games-with-js/archive/master.zip (or http://bit.ly/2ahuBWL)
+
+#+LaTeX: \begin{framed}
+  By default, the zip file will be downloaded into your =Downloads= directory. Navigate to your downloads directory then /right/ click on the file =games-with-js-master.zip= and select the option "extract here". Then navigate into the directory and you will find yourself in the right directory for this course.
+#+LaTeX: \end{framed}
+
+* General instructions for exercises  
+  Each exercise is going to involving solving =Leveln.html= where =n= can be 1 through 6. You have solved the level when you've modified the code in the corresponding =pathn.js= file so that hitting the "run level" button causes the character to move all the way to the goal.
+
+  Your solution will involve writing code /in the body/ of the function =solution= inside each =pathn.js= file.
+
+* Links to resources
+  + General JavaScript notes: http://bit.ly/2ahKOZc
+  + Crafty homepage: http://craftyjs.com/
