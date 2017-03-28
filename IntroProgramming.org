@@ -7,7 +7,6 @@
 #+LaTeX_HEADER: \usepackage{xcolor}
 #+LaTeX_HEADER: \usepackage{color}
 #+LaTeX_HEADER: \usepackage{minted}
-#+LaTeX_HEADER: \newcommand{\key}[1]{\textcolor{blue}{#1}}
 #+LaTeX_HEADER: \definecolor{shadecolor}{gray}{0.8}
 #+LaTeX_CLASS: beamer
 
@@ -34,14 +33,14 @@
 ** Why programming is hard
 *** 
     The precision of instructions computers need is unnatural for the human mind
-** Why programming is hard
+** Why programming is hard                                        
 *** 
 #+ATTR_LATEX: :width 5cm
-[[file:ikea-instructions.jpg][file:~/projects/games-with-js/ikea-instructions.jpg]]
-** Why programming is hard
+file:ikea-instructions.jpg
+** Why programming is hard                                        
 *** 
 #+ATTR_LATEX: :width 5cm
-[[file:EmpireStateSection.gif][file:~/projects/games-with-js/EmpireStateSection.png]]
+file:EmpireStateSection.png
 ** Why programming is learnable
    + Precise thinking may be unnatural \pause
    + But it's not impossible \pause
@@ -314,9 +313,10 @@ file:level3.png
 Do /something/ while /something/ is true. 
 ** While loop syntax
 #+BEGIN_SRC js :exports code
-  var i = 0;
-  while (i < 20) {
-      console.log(20);
+  var i = 100;
+  while (i > 1) {
+      console.log("looped");
+      i = i / 10;
   }
 #+END_SRC
 ** isAtExit predicate
@@ -329,6 +329,13 @@ Do /something/ while /something/ is true.
 ** Level 3: while-loops
 #+ATTR_LATEX: :width 5cm
 file:level3.png
+** Level 3: while-loops
+*** 
+#+BEGIN_SRC js :exports code
+  while(!isAtExit()){
+          ...
+  }
+#+END_SRC
 * Defining functions and Reusing code
 ** Level 4: jumping
 #+ATTR_LATEX: :width 5cm
